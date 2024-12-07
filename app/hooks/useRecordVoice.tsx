@@ -1,9 +1,8 @@
-import { useState, useCallback, useEffect, useRef, useContext } from "react";
-import { useAppContext } from "../store/store";
+import { useState } from "react";
 
 export function useRecordVoice() {
   const [transcript, setTranscript] = useState("");
-  const [formatedPrescription, setFormatedPrescription] = useState("");
+  const [formatedPrescription, _setFormatedPrescription] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTranscript(e.target.value);
   };

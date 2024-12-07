@@ -63,12 +63,12 @@ export default function PreviewPrescription({
             </h3>
             <ul className="mt-2 list-inside flex gap-2 text-sm text-orange-800">
               {formatedPrescription?.symptoms.map((item: string, i: number) => (
-                <>
+                <div key={i}>
                   <li>{item} </li>{" "}
                   {i < formatedPrescription?.symptoms.length - 1 && (
                     <span>+</span>
                   )}
-                </>
+                </div>
               ))}
             </ul>
           </div>
@@ -89,8 +89,10 @@ export default function PreviewPrescription({
               <Activity className="mr-2 h-5 w-5" />
               পরীক্ষা
             </h3>
-            {formatedPrescription?.test?.map((item: string) => (
-              <p className="mt-2 text-sm text-purple-800">{item}</p>
+            {formatedPrescription?.test?.map((item: string, i: number) => (
+              <p className="mt-2 text-sm text-purple-800" key={i}>
+                {item}
+              </p>
             ))}
           </div>
         </div>
@@ -102,8 +104,11 @@ export default function PreviewPrescription({
             ঔষধ
           </h3>
           <div className="space-y-4">
-            {formatedPrescription?.medicine?.map((item: any) => (
-              <div className="rounded-lg border-l-4 border-teal-500 bg-white p-4 shadow-sm">
+            {formatedPrescription?.medicine?.map((item: any, i: number) => (
+              <div
+                className="rounded-lg border-l-4 border-teal-500 bg-white p-4 shadow-sm"
+                key={i}
+              >
                 <h4 className="font-medium text-teal-700">{item.name}</h4>
                 <p className="mt-1 text-sm text-gray-600">
                   {item.dosage} - {item.instructions} - {item.duration}
@@ -117,7 +122,7 @@ export default function PreviewPrescription({
         <div className="mt-8 rounded-lg bg-teal-50 p-4">
           <h3 className="flex items-center font-semibold text-teal-700">
             <Clock className="mr-2 h-5 w-5" />
-            ফলো-আপ - ১ মাস পর
+            {formatedPrescription.followUp}
           </h3>
         </div>
 

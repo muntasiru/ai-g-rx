@@ -1,7 +1,5 @@
 import { BackgroundLines } from "@/components/ui/background-lines";
 import Link from "next/link";
-import React from "react";
-import { FloatingDocks } from "./floting-docs";
 import { VanishInput } from "./vanish-input";
 
 function Landing() {

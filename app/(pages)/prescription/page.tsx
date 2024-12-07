@@ -39,11 +39,11 @@ export default function Page() {
     if (transcript) setText(transcript);
   }, [transcript]);
 
-  const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    // if (event.code === "Space" && !event.repeat) {
-    //   SpeechRecognition.startListening({ continuous: true });
-    // }
-  }, []);
+  // const handleKeyDown = useCallback((event: KeyboardEvent) => {
+  // if (event.code === "Space" && !event.repeat) {
+  //   SpeechRecognition.startListening({ continuous: true });
+  // }
+  // }, []);
 
   //   const handleKeyUp = useCallback((event: KeyboardEvent) => {
   //     if (event.code === "Space") {
@@ -52,15 +52,12 @@ export default function Page() {
   //   }, []);
 
   // Add/remove keydown and keyup listeners
-  useEffect(() => {
-    // window.addEventListener("keydown", handleKeyDown);
-    // window.addEventListener("keyup", handleKeyUp);
 
-    return () => {
-      // window.removeEventListener("keydown", handleKeyDown);
-      //   window.removeEventListener("keyup", handleKeyUp);
-    };
-  }, []);
+  // window.addEventListener("keydown", handleKeyDown);
+  // window.addEventListener("keyup", handleKeyUp);
+
+  // window.removeEventListener("keydown", handleKeyDown);
+  //   window.removeEventListener("keyup", handleKeyUp);
 
   const handleMicClick = useCallback(async () => {
     if (text.length < 30) {
@@ -151,7 +148,7 @@ export default function Page() {
   );
 
   if (!browserSupportsSpeechRecognition) {
-    return <span>Browser doesn't support speech recognition.</span>;
+    return <span>Browser doesn&apos;t support speech recognition.</span>;
   }
 
   //   const [editorState, setEditorState] = useState(() =>
