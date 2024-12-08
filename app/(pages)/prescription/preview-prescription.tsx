@@ -9,6 +9,7 @@ export default function PreviewPrescription({
 }: {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prescriptionRef: any;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   formatedPrescription: any;
 }) {
   return (

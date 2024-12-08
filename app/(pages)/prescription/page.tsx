@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/animated-modal";
 import { useReactToPrint } from "react-to-print";
 import PreviewPrescription from "./preview-prescription";
-const defaultValue = JSON.parse(localStorage.getItem("text") ?? "{}");
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
   dangerouslyAllowBrowser: true,
@@ -28,11 +28,10 @@ const openai = new OpenAI({
 export default function Page() {
   const { transcript, listening, browserSupportsSpeechRecognition } =
     useSpeechRecognition();
-  console.log(Object.keys(defaultValue).length === 0 ? null : defaultValue);
 
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
-  const [formatedText, setFormatedText] = useState(defaultValue);
+  const [formatedText, setFormatedText] = useState(null);
   const [warning, setWarning] = useState("");
   // Update the text when the transcript changes
   useEffect(() => {
@@ -121,7 +120,10 @@ export default function Page() {
             console.log(response);
 
             setFormatedText(response);
-            localStorage.setItem("text", content);
+            // if (typeof window !== "undefined") {
+            //   localStorage.setItem("text", content);
+            // }
+
             setLoading(false);
           } catch (error) {
             setLoading(false);
@@ -162,7 +164,11 @@ export default function Page() {
   // Function to handle printing
   const handlePrint = useReactToPrint({
     contentRef: contentRef,
-    onAfterPrint: () => localStorage.removeItem("text"),
+    // onAfterPrint: () => {
+    //   if (typeof window !== "undefined") {
+    //    return localStorage.removeItem("text"),
+    //   }
+    // }
   });
 
   // Function to convert Draft.js content to HTML

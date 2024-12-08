@@ -8,10 +8,11 @@ interface ThemeProviderProps {
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const getDefaultTheme = (): "light" | "dark" => {
-    const storedTheme = localStorage.getItem("theme") as
-      | "light"
-      | "dark"
-      | null;
+    const storedTheme = "dark";
+    // localStorage.getItem("theme") as
+    //   | "light"
+    //   | "dark"
+    //   | null;
     if (storedTheme) {
       return storedTheme;
     }
