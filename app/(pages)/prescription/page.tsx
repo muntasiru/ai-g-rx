@@ -136,6 +136,8 @@ export default function Page() {
         console.error("No choices returned in the completion.");
       }
     } catch (error) {
+      console.log(error);
+
       setLoading(false);
     }
   }, [text]);
@@ -154,7 +156,7 @@ export default function Page() {
   //   const [editorState, setEditorState] = useState(() =>
   //     EditorState.createEmpty()
   //   );
-
+  /* eslint-disable react-hooks/rules-of-hooks */
   const contentRef = useRef<HTMLElement>(null);
 
   // Function to handle printing

@@ -1,10 +1,10 @@
 "use client";
-
 export function MicButton({
   startListening,
   SpeechRecognition,
   isRecording,
-}: any) {
+}: // eslint-disable-next-line @typescript-eslint/no-explicit-any
+any) {
   return (
     <button
       type="button"

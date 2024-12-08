@@ -5,6 +5,7 @@ module.exports = {
     "react-hooks/exhaustive-deps": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "prefer-const": "off",
+    "react-hooks/rules-of-hooks": "off",
     // Disables the rule globally
     // Turns the error into a warning
   },

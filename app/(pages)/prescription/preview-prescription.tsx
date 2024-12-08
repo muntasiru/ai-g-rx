@@ -7,6 +7,7 @@ export default function PreviewPrescription({
   prescriptionRef,
   formatedPrescription,
 }: {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   prescriptionRef: any;
   formatedPrescription: any;
 }) {
@@ -104,6 +105,7 @@ export default function PreviewPrescription({
             ঔষধ
           </h3>
           <div className="space-y-4">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {formatedPrescription?.medicine?.map((item: any, i: number) => (
               <div
                 className="rounded-lg border-l-4 border-teal-500 bg-white p-4 shadow-sm"

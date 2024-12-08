@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export function useRecordVoice() {
   const [transcript, setTranscript] = useState("");
-  const [formatedPrescription, _setFormatedPrescription] = useState("");
+  const [formatedPrescription] = useState("");
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setTranscript(e.target.value);
   };

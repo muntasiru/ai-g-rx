@@ -220,6 +220,7 @@ export const useOutsideClick = (
   callback: Function
 ) => {
   useEffect(() => {
+    // eslint-disable-next-line@typescript-eslint/no-unsafe-function-type
     const listener = (event: any) => {
       // DO NOTHING if the element being clicked is the target element or their children
       if (!ref.current || ref.current.contains(event.target)) {
